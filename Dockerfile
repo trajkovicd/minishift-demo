@@ -17,9 +17,9 @@ ENV PATH=$HOME/.local/bin/:$PATH \
 ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8
 
-ENV LICHOST=54.152.68.164 \
-    LICPORT=57777 \
-    LICPASS=qwaszx
+ENV TM_LICHOST=54.152.68.164 \
+    TM_LICPORT=57777 \
+    TM_LICPASS=qwaszx
 
 ENV TMAGENT_DATADIR=/tmdata/data \
     TMAGENT_LOGDIR=/tmdata/log
