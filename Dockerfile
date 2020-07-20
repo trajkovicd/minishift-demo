@@ -52,7 +52,7 @@ RUN INSTALL_PKGS="rh-python36 rh-python36-python-devel rh-python36-python-setupt
      ln -f -s /opt/rh/rh-python36/root/bin/echo_supervisord_conf .;) \
 &&  mkdir -p /tmp/build \
 &&  (cd /tmp/build; \
-     curl -O ftp://ftp.solution-soft.com/pub/tm/linux/redhat/64bit/tm_linux_2.6.up_x86_64-${TM_VERSION}.tgz; \
+     curl -O ftp://ftp.solution-soft.com/pub/tm/linux/redhat/64bit/tm_linux_2.6.up_x86_64-${TM_VERSION}.tar.gz; \
      tar -xzf tm_linux_2.6.up_x86_64-${TM_VERSION}.tgz; \
      ./ssstm_install.sh tm_linux_2.6.up_x86_64-${TM_VERSION}.rpm; \
      yum history sync) \
