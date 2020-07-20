@@ -4,7 +4,7 @@ LABEL vendor="SolutionSoft Systems, Inc"
 LABEL maintainer="kzhao@solution-soft.com"
 
 ARG PYTHON_VERSION=3.6
-ARG TM_VERSION=12.9R3
+ARG TM_VERSION=12.10R5
 ARG TINI_VERSION=v0.18.0
 ARG WILDFLY_VERSION 18.0.0.Final
 ARG WILDFLY_SHA1 2d4778b14fda6257458a26943ea82988e3ae6a66
@@ -17,14 +17,19 @@ ENV PATH=$HOME/.local/bin/:$PATH \
 ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8
 
-ENV LICHOST=172.0.0.1 \
+ENV LICHOST=54.152.68.164 \
     LICPORT=57777 \
-    LICPASS=docker
+    LICPASS=qwaszx
 
 ENV TMAGENT_DATADIR=/tmdata/data \
     TMAGENT_LOGDIR=/tmdata/log
 
-# User root user to install software
+# User jboss to add demo app
+USER jboss
+
+ADD HW2.war /opt/jboss/wildfly/standalone/deployments/
+
+# User root to install software
 USER root
 
 # - ADD files and install packages
@@ -67,6 +72,8 @@ COPY bin/tmlicd /usr/local/bin
 COPY config /
 
 EXPOSE 7800
+EXPOSE 8080
+
 VOLUME /tmdata
 
 ENTRYPOINT ["/tini", "--", "/entrypoint.sh"]
