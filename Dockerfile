@@ -53,10 +53,10 @@ RUN INSTALL_PKGS="rh-python36 rh-python36-python-devel rh-python36-python-setupt
 &&  mkdir -p /tmp/build \
 &&  (cd /tmp/build; \
      curl -O ftp://ftp.solution-soft.com/pub/tm/linux/redhat/64bit/tm_linux_2.6.up_x86_64-${TM_VERSION}.tar.gz; \
-     tar -xzf tm_linux_2.6.up_x86_64-${TM_VERSION}.tgz; \
+     tar -xzf tm_linux_2.6.up_x86_64-${TM_VERSION}.tar.gz; \
      ./ssstm_install.sh tm_linux_2.6.up_x86_64-${TM_VERSION}.rpm; \
      yum history sync) \
-&&  (cd /etc/ssstm/extras; rm -f .tm*.tgz Makefile.re) \
+&&  (cd /etc/ssstm/extras; rm -f .tm*.tar.gz Makefile.re) \
 &&  yum -y clean all --enablerepo='*' \
 &&  rm -rf /tmp/build \
 &&  chown root:root /tini \
