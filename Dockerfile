@@ -19,7 +19,7 @@ ENV LC_ALL=en_US.UTF-8 \
 
 ENV TM_LICHOST=127.0.0.1 \
     TM_LICPORT=57777 \
-    TM_LICPASS=qwaszx
+    TM_LICPASS=docker
 
 ENV TMAGENT_DATADIR=/tmdata/data \
     TMAGENT_LOGDIR=/tmdata/log
